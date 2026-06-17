@@ -1,0 +1,53 @@
+{
+  "name": "merchant-mcp",
+  "version": "0.1.0",
+  "description": "Universal Merchant MCP — protocol-neutral commerce layer for AI agents",
+  "main": "dist/server.js",
+  "bin": {
+    "merchant-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "commerce",
+    "payments",
+    "ai-agents",
+    "merchant"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/autopaylab/merchant-mcp.git"
+  },
+  "homepage": "https://github.com/autopaylab/merchant-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/autopaylab/merchant-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "express": "^4.18.2",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  },
+  "license": "MIT"
+}
