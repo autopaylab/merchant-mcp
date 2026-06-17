@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { McpError, ErrorCode } from "@modelcontextprotocol/sdk/types";
+import { McpError, ErrorCode } from "@modelcontextprotocol/sdk/types.js";
 import type {
   MerchantAdapter,
   GetCatalogParams,

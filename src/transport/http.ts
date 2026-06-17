@@ -1,6 +1,6 @@
 import express, { type Request, type Response } from "express";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import type { MerchantAdapter } from "../types/merchant";
 import { registerGetCatalog } from "../tools/get_catalog";
 import { registerCreateCheckoutSession } from "../tools/create_checkout_session";
