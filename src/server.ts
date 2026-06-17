@@ -7,7 +7,7 @@ const app = createApp(adapter, "mock");
 
 const PORT = Number(process.env.PORT ?? 3000);
 
-if (!process.env.VERCEL) {
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`merchant-mcp listening on http://localhost:${PORT}`);
     console.log(`  POST /mcp    — MCP endpoint (Streamable HTTP)`);

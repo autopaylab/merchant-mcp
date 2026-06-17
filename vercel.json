@@ -1,13 +1,1 @@
-{
-  "functions": {
-    "src/server.ts": {
-      "maxDuration": 30
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/src/server.ts"
-    }
-  ]
-}
+{ "rewrites": [{ "source": "/(.*)", "destination": "/api/index.ts" }] } 
