@@ -264,6 +264,45 @@
       color: var(--text-secondary);
     }
 
+    .connect-clients {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+
+    .connect-clients tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .connect-clients tr:last-child {
+      border-bottom: none;
+    }
+
+    .connect-clients td {
+      padding: 12px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    .client-label {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      padding-right: 24px;
+      width: 160px;
+    }
+
+    .connect-clients code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      color: var(--text-primary);
+    }
+
     /* ── Footer ───────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
@@ -402,16 +441,26 @@
   <!-- Connect -->
   <section class="connect">
     <div class="container">
-      <h2>Connect to Claude Desktop</h2>
-      <p class="connect-intro">Add merchant-mcp to your Claude Desktop configuration:</p>
-      <pre>{
-  "mcpServers": {
-    "merchant-mcp": {
-      "url": "https://mcp.autopaylab.com/mcp"
-    }
-  }
-}</pre>
-      <p class="connect-note">Compatible with any MCP client supporting Streamable HTTP transport.</p>
+      <h2>Connect your MCP client</h2>
+      <p class="connect-intro">Add merchant-mcp to any MCP-compatible client using the Streamable HTTP endpoint:</p>
+      <pre>{ "url": "https://mcp.autopaylab.com/mcp" }</pre>
+      <table class="connect-clients">
+        <tbody>
+          <tr>
+            <td class="client-label">Claude Code</td>
+            <td><code>claude mcp add merchant-mcp https://mcp.autopaylab.com/mcp</code></td>
+          </tr>
+          <tr>
+            <td class="client-label">Cursor / Windsurf</td>
+            <td>Settings → MCP → Add server → paste the URL above</td>
+          </tr>
+          <tr>
+            <td class="client-label">Any MCP client</td>
+            <td>Use the URL above with Streamable HTTP transport (protocol version 2025-03-26+)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="connect-note">Supports MCP protocol version 2025-03-26 and above. Streamable HTTP transport required.</p>
     </div>
   </section>
 
