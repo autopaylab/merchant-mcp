@@ -86,7 +86,7 @@ Add to your `claude_desktop_config.json`:
 {
   "mcpServers": {
     "merchant-mcp": {
-      "url": "https://YOUR-VERCEL-URL/mcp"
+      "url": "https://mcp.autopaylab.com/mcp"
     }
   }
 }
