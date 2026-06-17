@@ -23,6 +23,7 @@ function buildMcpServer(adapter: MerchantAdapter): McpServer {
 export function createApp(adapter: MerchantAdapter, adapterName = "mock"): express.Application {
   const app = express();
   app.use(express.json());
+  app.use(express.static("public"));
 
   // MCP endpoint — Streamable HTTP transport, one server per request (stateless)
   app.post("/mcp", async (req: Request, res: Response) => {
@@ -48,10 +49,6 @@ export function createApp(adapter: MerchantAdapter, adapterName = "mock"): expre
       version: SERVER_INFO.version,
       adapter: adapterName,
     });
-  });
-
-  app.get("/", (_req: Request, res: Response) => {
-    res.redirect("https://github.com/autopaylab/merchant-mcp");
   });
 
   return app;

@@ -1,1 +1,8 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/api/index.ts" }] } 
+{
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "public/**"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.ts" }]
+}
