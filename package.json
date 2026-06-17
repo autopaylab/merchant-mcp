@@ -2,7 +2,7 @@
   "name": "merchant-mcp",
   "version": "0.1.0",
   "description": "Universal Merchant MCP — protocol-neutral commerce layer for AI agents",
-  "main": "dist/server.js",
+  "main": "api/index.ts",
   "bin": {
     "merchant-mcp": "dist/server.js"
   },
