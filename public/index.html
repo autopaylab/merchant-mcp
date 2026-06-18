@@ -233,6 +233,61 @@
       color: var(--text-primary);
     }
 
+    /* ── How it works ────────────────────────── */
+    .how-works {
+      padding: var(--section-v) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .how-works h2 { margin-bottom: 16px; }
+
+    .how-works-intro {
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .step-number {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.22;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .callout {
+      background: #EFF6FF;
+      border: 1px solid #199BFF;
+      border-left: 4px solid #199BFF;
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
     /* ── Connect to Claude ────────────────────── */
     .claude-connect {
       padding: var(--section-v) 0;
@@ -414,6 +469,8 @@
 
       .cards { grid-template-columns: 1fr; }
 
+      .steps { grid-template-columns: 1fr; gap: 24px; }
+
       .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
     }
   </style>
@@ -501,6 +558,34 @@
 }</pre>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="how-works">
+    <div class="container">
+      <h2>How it works with your catalog</h2>
+      <p class="how-works-intro">merchant-mcp is a protocol layer, not a product catalog. It defines how AI agents communicate with merchants — what they can ask, and what they receive back. Your catalog, inventory, and checkout logic live in your own systems. merchant-mcp connects them to any AI agent through a standardized adapter.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>You bring your catalog</h3>
+          <p>Your products, prices, and inventory stay in your systems — an e-commerce platform, a PIM, or a custom database.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>You build an adapter</h3>
+          <p>An adapter connects your catalog to the MerchantAdapter interface. One adapter, any AI agent protocol.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>AI agents can shop</h3>
+          <p>Any MCP-compatible agent can discover products, initiate checkout, and check payment status — without custom integration per platform.</p>
+        </div>
+      </div>
+      <div class="callout">
+        The DemoShop adapter included in this repository is a working reference implementation. Replace it with your own adapter to connect a real merchant catalog.
       </div>
     </div>
   </section>
