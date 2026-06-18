@@ -42,6 +42,30 @@
     h1 { font-size: 48px; line-height: 1.1; }
     h2 { font-size: 32px; line-height: 1.2; }
 
+    /* ── Banner ───────────────────────────────── */
+    .banner {
+      background: #EFF6FF;
+      border-bottom: 1px solid #BFDBFE;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .banner-text {
+      font-size: 14px;
+      color: #1D4ED8;
+    }
+
+    .banner-link {
+      font-size: 14px;
+      color: #199BFF;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .banner-link:hover { text-decoration: underline; }
+
     /* ── Hero ─────────────────────────────────── */
     .hero {
       padding: var(--section-v) 0;
@@ -476,6 +500,12 @@
   </style>
 </head>
 <body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <span class="banner-text">Part of Autopay Agentic Payments infrastructure</span>
+    <a href="https://ai.autopayglobal.com" class="banner-link" target="_blank" rel="noopener">Learn more →</a>
+  </div>
 
   <!-- Hero -->
   <section class="hero">
