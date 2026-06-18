@@ -90,6 +90,33 @@ The fastest way to connect Claude.ai to merchant-mcp.
 
 ---
 
+## OpenAI Agents SDK
+
+merchant-mcp works with the OpenAI Agents SDK via its built-in MCP support. The SDK fetches the tool list automatically and translates it to OpenAI function-calling format.
+
+**Python:**
+
+```python
+from agents import Agent
+from agents.mcp import MCPServerStreamableHttp
+
+server = MCPServerStreamableHttp(url="https://mcp.autopaylab.com/mcp")
+agent = Agent(name="shop-agent", mcp_servers=[server])
+```
+
+**TypeScript / JS:**
+
+```ts
+import { Agent, MCPServerStreamableHttp } from "@openai/agents";
+
+const server = new MCPServerStreamableHttp({ url: "https://mcp.autopaylab.com/mcp" });
+const agent = new Agent({ name: "shop-agent", mcpServers: [server] });
+```
+
+Docs: [Python SDK](https://openai.github.io/openai-agents-python/ref/mcp/server/) · [JS SDK](https://openai.github.io/openai-agents-js/guides/mcp/) · [MCP in Responses API](https://platform.openai.com/docs/mcp)
+
+---
+
 ## Tools Reference
 
 | Tool | Description | Key Inputs |
