@@ -78,24 +78,6 @@ curl -X POST http://localhost:3000/mcp \
 
 ---
 
-## Connect to Claude Desktop
-
-Add to your `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "merchant-mcp": {
-      "url": "https://mcp.autopaylab.com/mcp"
-    }
-  }
-}
-```
-
-Restart Claude Desktop. The three tools will appear automatically.
-
----
-
 ## Install Claude Plugin
 
 The fastest way to connect Claude.ai to merchant-mcp.
