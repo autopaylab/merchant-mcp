@@ -233,6 +233,107 @@
       color: var(--text-primary);
     }
 
+    /* ── Connect to Claude ────────────────────── */
+    .claude-connect {
+      padding: var(--section-v) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .claude-connect h2 { margin-bottom: 32px; }
+
+    .claude-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .claude-method {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .claude-method--primary {
+      border-color: var(--accent);
+      background: #F0F8FF;
+    }
+
+    .method-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .method-header h3 {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .badge--gray {
+      background: var(--code-bg);
+      color: var(--text-secondary);
+    }
+
+    .claude-method p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .claude-method p code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--text-primary);
+    }
+
+    .method-download {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .method-steps {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .method-steps li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .method-steps li:last-child { margin-bottom: 0; }
+
+    .method-steps code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1px 4px;
+      color: var(--text-primary);
+    }
+
+    .claude-method pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px;
+      line-height: 1.65;
+      overflow-x: auto;
+      color: var(--text-primary);
+      margin-top: 4px;
+    }
+
     /* ── Connect ──────────────────────────────── */
     .connect {
       padding: var(--section-v) 0;
@@ -347,6 +448,8 @@
 
       .cards { grid-template-columns: 1fr; }
 
+      .claude-methods { grid-template-columns: 1fr; }
+
       .footer-inner { flex-direction: column; gap: 14px; text-align: center; }
     }
   </style>
@@ -431,6 +534,45 @@
           <p>Check the current status of a checkout session. Returns status, amount, and payment timestamp if completed.</p>
           <pre>{
   "session_id": "550e8400-e29b-41d4-a716-446655440000"
+}</pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect to Claude -->
+  <section class="claude-connect">
+    <div class="container">
+      <h2>Connect to Claude</h2>
+      <div class="claude-methods">
+
+        <div class="claude-method claude-method--primary">
+          <div class="method-header">
+            <span class="badge">Recommended</span>
+            <h3>Claude Plugin</h3>
+          </div>
+          <p>Install in one click — no config files, no restart.</p>
+          <a href="https://github.com/autopaylab/merchant-mcp/releases/latest/download/merchant-mcp.plugin" class="btn btn-primary method-download">Download .plugin</a>
+          <ol class="method-steps">
+            <li>Download the <code>.plugin</code> file above</li>
+            <li>Open Claude → Settings → Connectors → Upload plugin</li>
+            <li>Start a new conversation — three tools are now available</li>
+          </ol>
+        </div>
+
+        <div class="claude-method">
+          <div class="method-header">
+            <span class="badge badge--gray">Manual</span>
+            <h3>Claude Desktop</h3>
+          </div>
+          <p>Add to <code>claude_desktop_config.json</code> and restart Claude Desktop.</p>
+          <pre>{
+  "mcpServers": {
+    "merchant-mcp": {
+      "url": "https://mcp.autopaylab.com/mcp"
+    }
+  }
 }</pre>
         </div>
 

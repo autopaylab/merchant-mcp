@@ -96,6 +96,18 @@ Restart Claude Desktop. The three tools will appear automatically.
 
 ---
 
+## Install Claude Plugin
+
+The fastest way to connect Claude.ai to merchant-mcp.
+
+1. Download [merchant-mcp.plugin](https://github.com/autopaylab/merchant-mcp/releases/latest/download/merchant-mcp.plugin)
+2. Open Claude → Settings → Connectors → Upload plugin
+3. Start a new conversation — three tools are now available
+
+> Compatible with Claude.ai (Connectors) and Claude Cowork desktop app.
+
+---
+
 ## Tools Reference
 
 | Tool | Description | Key Inputs |
